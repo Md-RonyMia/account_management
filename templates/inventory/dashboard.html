@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Dashboard</title>
+</head>
+<body>
+    <h1>Inventory Dashboard</h1>
+    <p>Products in the inventory system:</p>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }} ({{ product.sku }})</li>
+        {% empty %}
+            <li>No products available yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
