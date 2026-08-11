@@ -1,19 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Supershop Management Home</title>
-</head>
-<body>
-    <h1>Supershop Management System</h1>
-    <p>Welcome to the supershop dashboard prototype.</p>
-    <nav>
-        <ul>
-            <li><a href="/inventory/">Inventory</a></li>
-            <li><a href="/purchasing/">Purchasing</a></li>
-            <li><a href="/analytics/">Analytics</a></li>
-            <li><a href="/notifications/">Notifications</a></li>
-        </ul>
-    </nav>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Supershop Management Home{% endblock title %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="display-4">Supershop Management System</h1>
+    <p class="lead">Welcome to the dashboard prototype. Select a module to get started.</p>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Inventory</h5>
+                <p class="card-text">Manage products, track stock levels, and view inventory snapshots.</p>
+                <a href="{% url 'inventory:dashboard' %}" class="btn btn-primary mt-auto">Go to Inventory</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Purchasing</h5>
+                <p class="card-text">Handle purchase requests, supplier information, and incoming stock.</p>
+                <a href="{% url 'purchasing:dashboard' %}" class="btn btn-primary mt-auto">Go to Purchasing</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Analytics</h5>
+                <p class="card-text">View sales forecasts, demand predictions, and AI-powered recommendations.</p>
+                <a href="{% url 'analytics:dashboard' %}" class="btn btn-primary mt-auto">Go to Analytics</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
